@@ -69,6 +69,16 @@
     ))
   )
 
+  (defn trans-closure
+    "Calculates the transitive clojure of a relation given as a set of vectors, 
+     e.g. (trans-closure #{[1 2] [2 3]}) yields #{[1 2] [2 3] [1 3]}"
+    [e]
+    (letfn [(f [x] (for [[a b] x [c d] x :when (= b c)] [a d]))]
+           (let [e2 (set (f e))]
+             (if (subset? e2 e)
+                 e
+               (recur (union e e2))))))
+
   (defn- inv1
     "flips a tuple"
   
