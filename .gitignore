@@ -12,3 +12,5 @@ pom.xml.asc
 .lein-failures
 .nrepl-port
 .cpcache/
+utils/target/default/repl-port
+utils/target/default/classes/META-INF/maven/utils/utils/pom.properties
