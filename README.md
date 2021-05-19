@@ -1,7 +1,7 @@
 # EDAA40-Repl-Utils
 ## Användbara funktioner för kursen EDAA40 Diskreta strukturer i datavetenskap.
 
-För att ta nytta av dessa, öppna terminalen i undermappen /utils och starta `lein repl`.
+För att ta nytta av dessa, öppna terminalen i undermappen **/utils** och starta `lein repl`.
 
 För att sedan ladda in filerna till repl, skriv `(use 'utils.core :reload)`.
 
