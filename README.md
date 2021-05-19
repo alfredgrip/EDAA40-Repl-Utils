@@ -7,3 +7,5 @@ För att sedan ladda in filerna till repl, skriv `(use 'utils.core :reload)`.
 
 I filen **core.clj** finner man funktioner användbara för mängder, funktioner och relationer.
 I filen **math.clj** finns mer matematiska funktioner, såsom att ta reda på ifall ett tal är ett primtal eller ifall ett tal delar ett annat.
+
+Observera att alla av funktionerna inte är skrivna av mig själv, utan många är hämtade från kursmaterialet.
