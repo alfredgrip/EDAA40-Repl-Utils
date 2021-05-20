@@ -78,6 +78,34 @@
              (if (subset? e2 e)
                  e
                (recur (union e e2))))))
+  
+  (declare closure-rec)
+
+  (defn closure
+    "computes the closure of X under the endofunction f
+    example: (closure f #{2})"
+    
+    [f X]
+
+  ;;(if (= (dom f) (rng f))
+  (closure-rec f X X)
+  ;;(print "Not endofunction")
+  ;;)
+    
+  )
+
+;; This is broken atm
+  (defn closure-rec
+    "helper function to compute the closure"
+  
+    [f X Y]
+  
+    (if (and (subset? X Y) (subset? (image-of-set f Y) Y))
+    Y
+    (union Y (closure-rec f X (image-of-set f Y)))
+    )
+
+    )
 
   (defn- inv1
     "flips a tuple"
