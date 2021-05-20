@@ -84,29 +84,23 @@
 ;; Is this correct?
   (defn closure
     "computes the closure of X under the endofunction f
-    example: (closure f #{2})"
+    example on use: (closure f #{2})
+    note that the element X must be a set"
     
     [f X]
 
   (closure-rec f X X)
-    
+
   )
 
-;; Might not produce right answer
   (defn closure-rec
     "helper function to compute the closure"
   
     [f X Y]
 
     (if (= (image-of-set f X) X)
-    (union Y (image-of-set f X))
+    (union Y X)
     (union Y (closure-rec f (image-of-set f X) (union Y X))))
-
-;;    (if (and (subset? X Y) (subset? (image-of-set f Y) Y))
-;;    Y
-;;    (union Y (image-of f Y) (closure-rec f X (image-of-set f Y)))
-;;    )
-
     )
 
   (defn- inv1
