@@ -5,7 +5,7 @@
 
   (defn cartesian
     "computes Cartesian product of A and B"
- 
+
     [A B]
    (set (for [a A b B] [a b]))
    
@@ -85,7 +85,8 @@
   (defn closure
     "computes the closure of X under the endofunction f
     example on use: (closure f #{2})
-    note that the element X must be a set"
+    note that the element X must be a set, 
+    with preferably only one element in it (singleton)"
     
     [f X]
 
