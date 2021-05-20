@@ -81,29 +81,31 @@
   
   (declare closure-rec)
 
+;; Is this correct?
   (defn closure
     "computes the closure of X under the endofunction f
     example: (closure f #{2})"
     
     [f X]
 
-  ;;(if (= (dom f) (rng f))
   (closure-rec f X X)
-  ;;(print "Not endofunction")
-  ;;)
     
   )
 
-;; This is broken atm
+;; Might not produce right answer
   (defn closure-rec
     "helper function to compute the closure"
   
     [f X Y]
-  
-    (if (and (subset? X Y) (subset? (image-of-set f Y) Y))
-    Y
-    (union Y (closure-rec f X (image-of-set f Y)))
-    )
+
+    (if (= (image-of-set f X) X)
+    (union Y (image-of-set f X))
+    (union Y (closure-rec f (image-of-set f X) (union Y X))))
+
+;;    (if (and (subset? X Y) (subset? (image-of-set f Y) Y))
+;;    Y
+;;    (union Y (image-of f Y) (closure-rec f X (image-of-set f Y)))
+;;    )
 
     )
 
